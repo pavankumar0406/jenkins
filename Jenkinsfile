@@ -1,7 +1,7 @@
 node {
     
     stage('Git clone ') {
-        git branch: 'main', credentialsId: 'pavan', url: 'https://github.com/pavankumar0406/jenkins.git'
+        git branch: 'main', credentialsId: 'pavan', url: 'https://github.com/pavankumar0406/app.git'
     }
     stage ('mvn clean') {
         sh 'mvn clean'
