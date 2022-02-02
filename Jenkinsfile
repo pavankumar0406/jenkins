@@ -9,7 +9,7 @@ node {
     stage ('mvn validate') {
         sh 'mvn validate'
     }
-    stage ('mvn validate') {
+    stage ('sonar scan') {
         sh 'mvn sonar:sonar -Dsonar.host.url=http://13.233.78.227:9000 -Dsonar.login=743e00dd89b6b8af30b65f713408fa6e0448d8f1'
     }
     stage ('mvn compile') {
