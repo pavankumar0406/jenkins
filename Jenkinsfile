@@ -6,6 +6,9 @@ node {
     stage ('mvn clean') {
         sh 'mvn clean'
     }
+    stage ('mvn version') {
+        sh 'mvn version'
+    }
     stage ('mvn validate') {
         sh 'mvn validate'
     }
