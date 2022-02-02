@@ -42,9 +42,9 @@ pipeline {
               sh 'mvn package'
         }
         }
-        stage('mvn Delpoy') {
+        stage('mmvn deploy') {
             steps {
-              sh 'mvn Delpoy'
+              sh 'mvn deploy'
         }
         }
     }
