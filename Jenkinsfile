@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Git clone ') {
         steps {
-            git branch: 'main', credentialsId: 'pavan', url: 'https://github.com/pavankumar0406/app.git'
+            git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/pavankumar0406/app.git'
         }
         }
 
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('sonar scan') {
             steps {
-              sh 'mvn sonar:sonar -Dsonar.host.url=http://52.66.241.119:9000 -Dsonar.login=743e00dd89b6b8af30b65f713408fa6e0448d8f1'
+              sh 'mvn sonar:sonar \-Dsonar.host.url=http://34.125.153.241:9000 \-Dsonar.login=0dd574497075c4de7e94ebf459aab051167465d5'
         }
         }
         stage('maven validate') {
@@ -47,7 +47,7 @@ pipeline {
               sh 'mvn package'
         }
         }
-        stage('mmvn deploy') {
+        stage('mvn deploy') {
             steps {
               sh 'mvn deploy'
         }
